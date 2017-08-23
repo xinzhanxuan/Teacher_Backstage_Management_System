@@ -24,7 +24,7 @@ define(['jquery','template','nprogress','jquery_cookie',],function ($,template,n
         //设置头像
         var userinfo = $.cookie('userinfo');
         userinfo = JSON.parse(userinfo);
-        console.log(userinfo);
+        // console.log(userinfo);
         $('#headImg img').attr('src',userinfo.tc_avatar);
         var html = template('asideHead',{
           tc_avatar:userinfo.tc_avatar || '/uploads/avatar.jpg',

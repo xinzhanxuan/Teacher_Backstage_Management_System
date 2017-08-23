@@ -54,7 +54,7 @@ define(['jquery','template','bootstrap'],function ($,template) {
         },
         url:'/api/teacher/handle',
         success:function (info) {
-          console.log(info);
+          // console.log(info);
           if(info.code == 200){
            if(info.result.tc_status == 0){
              $that.html('注 销');

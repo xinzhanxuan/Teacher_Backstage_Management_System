@@ -19,7 +19,7 @@ define(['jquery','template','tool','bootstrap','jquery_form'],function ($,templa
           tc_id:tc_id
         },
         success:function (info) {
-          console.log(info);
+          // console.log(info);
           info.result.title = '讲师编辑';
           info.result.text = '修 改';
           var html = template('teacher_edit',info.result)
@@ -38,7 +38,7 @@ define(['jquery','template','tool','bootstrap','jquery_form'],function ($,templa
         type:'post',
         url:url,
         success:function (info) {
-          console.log(info);
+          // console.log(info);
           if(info.code == 200){
             alert('ok');
             location.href = '/teacher/list';
