@@ -15,8 +15,23 @@ define(["jquery", "datepicker", "datepicker_cn"], function ($) {
       todayHighlight:true
     });
   }
+  function getParamPath() {
+    var hrefPath = location.search;
+    hrefPath = hrefPath.slice(1);
+    var pathArr = hrefPath.split('&');
+    var pathObj = {};
+    pathArr.forEach(function (v, i) {
+      var arr = v.split('=');
+      pathObj[arr[0]] = Number(arr[1]);
+    })
+    return pathObj;
+  }
+  function getParam(key) {
+    return getParamPath()[key];
+  }
   
   return {
-    setDate:setDate
+    setDate:setDate,
+    getParam:getParam
   }
 })

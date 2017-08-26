@@ -36,7 +36,10 @@ define(['jquery', 'template', 'nprogress', 'jquery_cookie',], function ($, templ
         var pathObj = {
           '/teacher/add': '/teacher/list',
           '/settings': '/',
-          '/repass': '/'
+          '/repass': '/',
+          '/course/step1':'/course/add',
+          '/course/step2':'/course/add',
+          '/course/step3':'/course/add',
         }
         pathName = pathObj[pathName] || pathName;
         var pathList = $('.list-unstyled a');
