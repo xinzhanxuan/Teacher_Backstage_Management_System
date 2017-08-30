@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>学IT - 后台管理系统</title>
   <?php include '/views/common/css.html';?>
+  <link rel="stylesheet" href="/public/assets/Jcrop/css/Jcrop.css">
   <style>
     .btn_upfile {
       padding: 0;
@@ -35,8 +36,8 @@
   <div class="steps">
     <!-- 摘要 -->
     <div class="brief">
-      <div class="thumb">
-        <img src={{cs_cover_original?cs_cover_original:"/uploads/course_1.jpg"}} alt="">
+      <div class="thumb" id='thumb'>
+        <img src="{{cs_cover?cs_cover:'/uploads/course.png'}}" alt="">
       </div>
       <dl class="info">
         <dt>{{cs_name}}</dt>
@@ -75,7 +76,7 @@
       </div>
       <!-- 上传图片 -->
       <div class="picture col-md-offset-2">
-        <div class="preview">
+        <div class="preview" id='preview'>
           <img src="{{cs_cover_original?cs_cover_original:'/uploads/course.png'}}" alt="">
         </div>
         <p class="tips">
@@ -85,7 +86,7 @@
           <button id='pp'></button>
         </div>
         <div class="col-md-2">
-          <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+          <button class="btn btn-warning btn-sm" {{cs_cover_original?"":"disabled"}} id='clip'>裁切图片</button>
         </div>
       </div>
     </div>
